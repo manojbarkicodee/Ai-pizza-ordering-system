@@ -1,0 +1,17 @@
+version: '3'
+services:
+  chroma:
+    image: chromadb/chroma
+    container_name: chromadb-container
+    ports:
+      - '8000:8000'
+    volumes:
+      - /home/anisha/Desktop/pizza-order-openai-lang-node/db:/data/db
+    networks:
+      - chroma-network
+    restart: unless-stopped
+networks:
+  chroma-network:
+      driver: bridge
+
+
